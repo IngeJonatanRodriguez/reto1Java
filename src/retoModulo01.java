@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class retoModulo01 {
 
+    //constantes para los planetas
     private static final String[] PLANETAS = { "Marte", "Júpiter", "Saturno", "Venus", "Neptuno" };
     private static final double[] DISTANCIAS = { 225.0, 778.0, 1429.0, 556.32, 884.25 }; // Distancias en millones de km
     private static final String[] DESCRIPCIONES_PLANETAS = {
@@ -57,6 +58,7 @@ public class retoModulo01 {
         scanner.close();
     }
 
+    //metodo para mostrar el menu principal
     private static void mostrarMenu() {
         System.out.println(" =======================");
         System.out.println("| VIAJE INTERPLANETARIO |");
@@ -70,6 +72,7 @@ public class retoModulo01 {
         System.out.println("  .....................");
     }
 
+    //Metodo para mostrar la seleccion de planetas
     private static void seleccionarPlaneta(Scanner scanner) {
         System.out.println("Seleccione un planeta de destino:");
         for (int i = 0; i < PLANETAS.length; i++) {
@@ -85,6 +88,7 @@ public class retoModulo01 {
         }
     }
 
+    //Metodo para seleccionar Nave y velocidad
     private static void seleccionarNave(Scanner scanner) {
         System.out.println("Seleccione una nave espacial:");
         for (int i = 0; i < NAVES.length; i++) {
@@ -100,6 +104,7 @@ public class retoModulo01 {
         }
     }
 
+    //Metodo para ingresar cantidad de pasajeros
     private static void ingresarPasajeros(Scanner scanner) {
         System.out.print("Ingrese la cantidad de pasajeros: ");
         cantidadPasajeros = scanner.nextInt();
@@ -111,12 +116,14 @@ public class retoModulo01 {
         }
     }
 
+    //Metodo de calcular duracion de Viaje
     private static double calcularDuracion() {
         double distancia = DISTANCIAS[planetaSeleccionado];
         double velocidad = VELOCIDADES[naveSeleccionada];
         return distancia / velocidad;
     }
 
+    //Metodo de inicio de Simulacion
     private static void iniciarSimulacion() {
         System.out.println("Iniciando el viaje...");
         double duracion = calcularDuracion();
