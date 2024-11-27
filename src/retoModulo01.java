@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class retoModulo01 {
 
 
@@ -20,8 +22,40 @@ public class retoModulo01 {
     private static int naveSeleccionada = -1;
     private static int cantidadPasajeros = 1;
 
-    
+
     public static void main(String[] args) throws Exception {
+        Scanner scanner = new Scanner(System.in);
+        boolean salir = false;
+
+        while (!salir) {
+            mostrarMenu();
+            int opcion = scanner.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    seleccionarPlaneta(scanner);
+                    break;
+                case 2:
+                    seleccionarNave(scanner);
+                    ingresarPasajeros(scanner);
+                    break;
+                case 3:
+                    if (planetaSeleccionado != -1 && naveSeleccionada != -1) {
+                        iniciarSimulacion();
+                    } else {
+                        System.out.println("Por favor, seleccione un planeta y una nave antes de iniciar su viaje.");
+                    }
+                    break;
+                case 4:
+                    System.out.println("Saliendo del programa...");
+                    salir = true;
+                    break;
+                default:
+                    System.out.println("Opción no válida. Intente nuevamente.");
+            }
+        }
+        scanner.close();
+    }
 
         
 
