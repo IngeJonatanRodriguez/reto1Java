@@ -87,6 +87,21 @@ public class retoModulo01 {
     }
 
 
+    private static void seleccionarNave(Scanner scanner) {
+        System.out.println("Seleccione una nave espacial:");
+        for (int i = 0; i < NAVES.length; i++) {
+            System.out.println((i + 1) + ". " + NAVES[i] + " - Velocidad máxima: " + VELOCIDADES[i] + " millones de km ");
+        }
+        int seleccion = scanner.nextInt();
+        if (seleccion >= 1 && seleccion <= NAVES.length) {
+            naveSeleccionada = seleccion - 1;
+            System.out.println("Nave seleccionada: " + NAVES[naveSeleccionada]);
+        } else {
+            System.out.println("Selección inválida. Intente nuevamente.");
+        }
+    }
+
+
         
 
         
