@@ -101,6 +101,17 @@ public class retoModulo01 {
         }
     }
 
+    private static void ingresarPasajeros(Scanner scanner) {
+        System.out.print("Ingrese la cantidad de pasajeros: ");
+        cantidadPasajeros = scanner.nextInt();
+        if (cantidadPasajeros >0 ) {
+            System.out.println("Cantidad de pasajeros: " + cantidadPasajeros);
+        } else {
+            System.out.println("Número de pasajeros inválido. Debe ser minimo uno y maximo 4.");
+            cantidadPasajeros = 0;
+        }
+    }
+
 
         
 
