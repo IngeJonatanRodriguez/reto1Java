@@ -112,6 +112,11 @@ public class retoModulo01 {
         }
     }
 
+    private static double calcularDuracion() {
+        double distancia = DISTANCIAS[planetaSeleccionado];
+        double velocidad = VELOCIDADES[naveSeleccionada];
+        return distancia / velocidad;
+
 
         
 
