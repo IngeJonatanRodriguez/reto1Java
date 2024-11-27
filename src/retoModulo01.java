@@ -70,6 +70,23 @@ public class retoModulo01 {
         System.out.println("  .....................");
     }
 
+
+    private static void seleccionarPlaneta(Scanner scanner) {
+        System.out.println("Seleccione un planeta de destino:");
+        for (int i = 0; i < PLANETAS.length; i++) {
+            System.out.println((i + 1) + ". " + PLANETAS[i] + " - " + DESCRIPCIONES_PLANETAS[i]);
+        }
+        int seleccion = scanner.nextInt();
+        if (seleccion >= 1 && seleccion <= PLANETAS.length) {
+            planetaSeleccionado = seleccion - 1;
+            System.out.println("Planeta seleccionado: " + PLANETAS[planetaSeleccionado] + ", Distancia: "
+                    + DISTANCIAS[planetaSeleccionado] + " millones de km.");
+        } else {
+            System.out.println("Selección inválida. Intente nuevamente.");
+        }
+    }
+
+
         
 
         
