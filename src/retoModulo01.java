@@ -115,15 +115,31 @@ public class retoModulo01 {
     private static double calcularDuracion() {
         double distancia = DISTANCIAS[planetaSeleccionado];
         double velocidad = VELOCIDADES[naveSeleccionada];
-        return distancia / velocidad;
+        return distancia / velocidad;        
+    }
 
+    private static void iniciarSimulacion() {
+        System.out.println("Iniciando el viaje...");
+        double duracion = calcularDuracion();
+        int progreso = 0;
 
-        
+        for (int i = 0; i <= 100; i += 10) {
+            System.out.println("Progreso del viaje: " + i + "% completado.");
 
-        
+            if (i == 0) {
+                System.out.println("Inicio del viaje.");
+            } else if (i == 50) {
+                System.out.println("Mitad del camino alcanzada. ");
+            } else if (i == 100) {
+                System.out.println("Llegada al destino: " + PLANETAS[planetaSeleccionado]);
+            }
 
-
-
-        
+            try {
+                Thread.sleep(500); // Pausa para simular el tiempo del viaje
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("Duración estimada del viaje: " + duracion + " días.");
     }
 }
