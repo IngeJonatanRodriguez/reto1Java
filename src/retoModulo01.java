@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class retoModulo01 {
 
-
     private static final String[] PLANETAS = { "Marte", "Júpiter", "Saturno", "Venus", "Neptuno" };
     private static final double[] DISTANCIAS = { 225.0, 778.0, 1429.0, 556.32, 884.25 }; // Distancias en millones de km
     private static final String[] DESCRIPCIONES_PLANETAS = {
@@ -14,14 +13,15 @@ public class retoModulo01 {
     };
 
     // Constantes para las naves espaciales
-    private static final String[] NAVES = { "Alcerina, reserva de oxigeno 1000 Litros, combustible 10 Galones", "La ruidosa, reserva de oxigeno 3000 Litros, combustible 30 Galones", "Silent Hills, reserva de oxigeno 5000 Litros, combustible 100 Galones" };
+    private static final String[] NAVES = { "Alcerina, reserva de oxigeno 1000 Litros, combustible 10 Galones",
+            "La ruidosa, reserva de oxigeno 3000 Litros, combustible 30 Galones",
+            "Silent Hills, reserva de oxigeno 5000 Litros, combustible 100 Galones" };
     private static final double[] VELOCIDADES = { 30.0, 50.0, 70.0 }; // Velocidades en millones de km/día
-    
+
     // Variables para la selección del usuario
     private static int planetaSeleccionado = -1;
     private static int naveSeleccionada = -1;
     private static int cantidadPasajeros = 1;
-
 
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
@@ -70,7 +70,6 @@ public class retoModulo01 {
         System.out.println("  .....................");
     }
 
-
     private static void seleccionarPlaneta(Scanner scanner) {
         System.out.println("Seleccione un planeta de destino:");
         for (int i = 0; i < PLANETAS.length; i++) {
@@ -86,11 +85,11 @@ public class retoModulo01 {
         }
     }
 
-
     private static void seleccionarNave(Scanner scanner) {
         System.out.println("Seleccione una nave espacial:");
         for (int i = 0; i < NAVES.length; i++) {
-            System.out.println((i + 1) + ". " + NAVES[i] + " - Velocidad máxima: " + VELOCIDADES[i] + " millones de km ");
+            System.out
+                    .println((i + 1) + ". " + NAVES[i] + " - Velocidad máxima: " + VELOCIDADES[i] + " millones de km ");
         }
         int seleccion = scanner.nextInt();
         if (seleccion >= 1 && seleccion <= NAVES.length) {
@@ -104,7 +103,7 @@ public class retoModulo01 {
     private static void ingresarPasajeros(Scanner scanner) {
         System.out.print("Ingrese la cantidad de pasajeros: ");
         cantidadPasajeros = scanner.nextInt();
-        if (cantidadPasajeros >0 ) {
+        if (cantidadPasajeros > 0) {
             System.out.println("Cantidad de pasajeros: " + cantidadPasajeros);
         } else {
             System.out.println("Número de pasajeros inválido. Debe ser minimo uno y maximo 4.");
@@ -115,7 +114,7 @@ public class retoModulo01 {
     private static double calcularDuracion() {
         double distancia = DISTANCIAS[planetaSeleccionado];
         double velocidad = VELOCIDADES[naveSeleccionada];
-        return distancia / velocidad;        
+        return distancia / velocidad;
     }
 
     private static void iniciarSimulacion() {
