@@ -17,7 +17,7 @@ public class retoModulo01 {
     private static final String[] NAVES = { "Alcerina, reserva de oxigeno 1000 Litros, combustible 10 Galones",
             "La ruidosa, reserva de oxigeno 3000 Litros, combustible 30 Galones",
             "Silent Hills, reserva de oxigeno 5000 Litros, combustible 100 Galones" };
-    private static final double[] VELOCIDADES = { 30.0, 50.0, 70.0 }; // Velocidades en millones de km/día
+    private static final double[] VELOCIDADES = { 30.0, 50.0, 70.0 }; // Velocidades en millones de km
 
     // Variables para la selección del usuario
     private static int planetaSeleccionado = -1;
@@ -27,11 +27,11 @@ public class retoModulo01 {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         boolean salir = false;
-
+        //ciclo
         while (!salir) {
             mostrarMenu();
             int opcion = scanner.nextInt();
-
+            //sentencia
             switch (opcion) {
                 case 1:
                     seleccionarPlaneta(scanner);
@@ -141,7 +141,7 @@ public class retoModulo01 {
             }
 
             try {
-                Thread.sleep(500); // Pausa para simular el tiempo del viaje
+                Thread.sleep(1000); // Pausa para simular el tiempo del viaje
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
