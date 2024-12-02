@@ -147,5 +147,7 @@ public class retoModulo01 {
             }
         }
         System.out.println("Duración estimada del viaje: " + duracion + " días.");
+
+        
     }
 }
